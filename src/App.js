@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// extends itu aku ingin mirip seperti
+// extends itu aku ingin mirip seperti ini itu perubahan
 //class App extends React.Component {
 class App extends Component {
   render() {
