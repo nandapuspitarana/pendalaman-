@@ -1,15 +1,44 @@
 import React, { Component } from 'react';
+import HomeContainer from './containers/HomeContainer';
+import AboutContainer from './containers/AboutUsContainer';
+import ContactContainer from './containers/ContactContainer';
 
 // extends itu aku ingin mirip seperti ini itu perubahan
 //class App extends React.Component {
 class App extends Component {
+  state = {
+    page: 'home'
+  };
+
+  pindah = halaman => {
+    this.setState({ page: halaman });
+  };
+
   render() {
     return (
       <div>
-        <Counter namaClub="Liverpool" />
-        <Counter namaClub="Chealsea" />
-        <Counter namaClub="Barca" />
-        <Counter namaClub="Manchaster Cty" />
+        {this.state.page == 'home' && <HomeContainer />}
+        {this.state.page == 'about' && <AboutContainer />}
+        {this.state.page == 'contact' && <ContactContainer />}
+
+        <button
+          onClick={() => {
+            this.pindah('home');
+          }}>
+          home
+        </button>
+        <button
+          onClick={() => {
+            this.pindah('about');
+          }}>
+          about
+        </button>
+        <button
+          onClick={() => {
+            this.pindah('contact');
+          }}>
+          contact
+        </button>
       </div>
     );
   }
